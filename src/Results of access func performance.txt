@@ -1,0 +1,7 @@
+NegativeDirectMemoryAccess: 780
+NegativeDirectMemoryAccess2: 61
+NegativeIterator: 621
+NegativeRandomAccess: 715
+NegativRawPtrAccess: 277
+NegativeMatIterator: 578
+NegativeLambda: 133
