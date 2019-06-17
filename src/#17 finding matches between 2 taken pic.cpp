@@ -91,12 +91,9 @@ int main() {
 	cv::Mat matchingResult;
 	auto matches = findMatches(capImgDescriptors, compImgDescriptors);
 
-	int sizeBefore = matches.size();
+	std::cout << "Before: " << matches.size() << std::endl;
 	eraseBadMatches(matches);
-	int sizeAfter = matches.size();
-
-	std::cout << "Before: " << sizeBefore << std::endl;
-	std::cout << "After: " << sizeAfter << std::endl;
+	std::cout << "After: " << matches.size() << std::endl;
 
 	cv::drawMatches(
 		capturedImage, capImgFeatures, 
