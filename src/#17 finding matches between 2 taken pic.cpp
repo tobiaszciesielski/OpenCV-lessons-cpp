@@ -63,11 +63,12 @@ void eraseBadMatches(std::vector<cv::DMatch>& matches)
 		meanOfDistance += m.distance;
 
 	meanOfDistance = meanOfDistance / matches.size();
-	meanOfDistance *= 0.5;
 
 	for (auto itr = matches.begin(); itr != matches.end(); itr++)
 		if (itr->distance > meanOfDistance)
 			itr = matches.erase(itr);
+		else
+			itr++;
 }
 
 int main() {
@@ -94,7 +95,7 @@ int main() {
 	std::cout << "Before: " << matches.size() << std::endl;
 	eraseBadMatches(matches);
 	std::cout << "After: " << matches.size() << std::endl;
-
+q
 	cv::drawMatches(
 		capturedImage, capImgFeatures, 
 		comparativeImage, compImgFeatures, 
